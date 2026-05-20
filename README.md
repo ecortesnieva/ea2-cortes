@@ -1,22 +1,30 @@
-# Buscador Automatizado de Artistas - TheAudioDB API
+# Evaluacion 2 - Administración de Contenedores y Pipelines (DRY7122)
 
-## A. Definición del Contexto y Narrativa
-
-* **Stakeholder:** **Music Curator & Content Creator (Editor de Contenido Musical)**. Este perfil técnico necesita automatizar la recolección de metadatos básicos de artistas musicales (nombre oficial, género y país de origen) para poblar catálogos y plataformas de streaming de manera masiva, eliminando por completo la búsqueda manual en navegadores web.
-* **Propuesta de Valor (Problema/Solución):** El proceso manual de documentar biografías y géneros de artistas genera pérdidas de tiempo y errores de digitación. Esta aplicación resuelve la necesidad ejecutando una consulta puntual y ligera a la API de TheAudioDB por consola. Procesa los campos estructurados en segundos, garantizando consistencia de datos y permitiendo su portabilidad total mediante contenedores Docker e integración continua con Jenkins.
+**Estudiante:** Emilio Cortes  
+**Especialidad:** Ingeniería en Infraestructura Tecnológica y Redes  
+**Institución:** DuocUC  
 
 ---
 
-## B. Guía de Configuración y Variables de Entorno
+## 🚀 Resumen del Proyecto
+Este repositorio contiene el despliegue contenerizado de una aplicación en Python que consume la API de **TheAudioDB** de forma dinámica y segura, integrada con la lógica de automatización para un Pipeline de CI/CD.
 
-Para resguardar la seguridad técnica y evitar el hardcoding de credenciales, la aplicación requiere las siguientes variables de entorno:
+## 📁 Estructura del Repositorio
+* **`app.py`**: Código fuente en Python optimizado con manejo de excepciones y consumo dinámico mediante variables de entorno (`ARTISTA_A_BUSCAR`).
+* **`Dockerfile`**: Archivo de configuración permanente para la construcción de la imagen basada en `python:3.9-slim`.
+* **`requirements.txt`**: Definición de librerías requeridas (`requests`).
+* **`output.txt`**: Reporte real de ejecución en entorno Linux (Killercoda) que demuestra el estado `Exited (0)` y la captura de logs con resultados exitosos.
+* **`evidencias/jenkins/pipeline_script.txt`**: Script en Groovy con la estructura formal del Pipeline exigido por la pauta (`Preparation` y `Build`).
 
-* `API_KEY_PROYECTO`: Llave de acceso para la API de TheAudioDB (para pruebas públicas se utiliza el valor `2`).
-* `ARTISTA_A_BUSCAR`: Nombre del artista musical que se desea consultar (Ejemplo: `Coldplay`, `Linkin Park`).
+---
 
-### Inicialización de Variables de Entorno
+## 🐋 Comandos de Ejecución (Motor Docker)
 
-**En Windows (PowerShell):**
-```powershell
-$env:API_KEY_PROYECTO="2"
-$env:ARTISTA_A_BUSCAR="Coldplay"
+Para recrear el entorno en cualquier máquina con Docker:
+
+```bash
+# 1. Construir la imagen
+docker build -t music-app-img .
+
+# 2. Ejecutar de forma dinámica pasándole el artista deseado
+docker run --name samplerunning_new -e API_KEY_PROYECTO="2" -e ARTISTA_A_BUSCAR="Linkin Park" music-app-img
