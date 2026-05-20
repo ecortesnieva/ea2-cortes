@@ -1,0 +1,13 @@
+CONTAINER ID   IMAGE           COMMAND           CREATED         STATUS                     PORTS     NAMES
+3910864471e6   music-app-img   "python app.py"   2 minutes ago   Exited (0) 2 minutes ago             samplerunning_new
+
+=== LOGS DE LA API ===
+Buscando información en la API para: 'Linkin Park'...
+
+=============================================
+✅ RESULTADOS OBTENIDOS
+🎸 Artista: Linkin Park
+📁 Género: Alternative Rock
+🌍 País: California, USA
+📖 Biografía: Linkin Park es una banda estadounidense de rock procedente de Agoura Hills, California. Formada en 1996, el grupo estuvo inicialmente integrado por Mike Shinoda, Dave Farrell, Joe Hahn, Brad Delson, Rob Bourdon y Mark Wakefield, este último como voz principal. La banda inició en ese mismo año sus pr...
+=============================================
