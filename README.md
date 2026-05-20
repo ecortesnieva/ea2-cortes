@@ -1,7 +1,7 @@
 # Evaluacion 2 - Administración de Contenedores y Pipelines (DRY7122)
 
 **Estudiante:** Emilio Cortes  
-**Especialidad:** Ingeniería en Infraestructura Tecnológica y Redes  
+**Especialidad:** Ingeniería en Conectividad y Redes  
 **Institución:** DuocUC  
 
 ---
